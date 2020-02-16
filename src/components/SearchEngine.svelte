@@ -1,0 +1,12 @@
+<script>
+    export let article;
+</script>
+
+<svelte:head>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="ko_KR"/>
+    <meta property="og:site_name" content="overconfigured"/>
+    <meta property="og:image" content="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTMuMzA2di0yLjYxMmwtMi40NTItLjYxNGMtLjA4MS0uNDA3LS4xODgtLjgwNS0uMzE4LTEuMTkybDEuODE1LTEuNzU2LTEuMzA2LTIuMjYzLTIuNDMyLjY5NWMtLjI3Mi0uMzA5LS41NjItLjU5OS0uODcxLS44NzFsLjY5NS0yLjQzMi0yLjI2My0xLjMwNi0xLjc1NiAxLjgxNWMtLjM4Ny0uMTMtLjc4NS0uMjM3LTEuMTkyLS4zMThsLS42MTQtMi40NTJoLTIuNjEybC0uNjE0IDIuNDUyYy0uNDA3LjA4MS0uODA1LjE4OC0xLjE5Mi4zMTlsLTEuNzU3LTEuODE2LTIuMjYyIDEuMzA2LjY5NSAyLjQzM2MtLjMwOS4yNzEtLjU5OS41NjItLjg3MS44N2wtMi40MzItLjY5NS0xLjMwNiAyLjI2MiAxLjgxNSAxLjc1N2MtLjEzLjM4Ny0uMjM3Ljc4NS0uMzE4IDEuMTkybC0yLjQ1Mi42MTR2Mi42MTJsMi40NTIuNjE0Yy4wODIuNDA3LjE4OC44MDUuMzE4IDEuMTkybC0xLjgxNSAxLjc1NiAxLjMwNiAyLjI2MyAyLjQzMi0uNjk1Yy4yNzIuMzA4LjU2Mi41OTkuODcxLjg3MWwtLjY5NSAyLjQzMiAyLjI2MyAxLjMwNiAxLjc1Ni0xLjgxNmMuMzg3LjEzMS43ODUuMjM3IDEuMTkyLjMxOWwuNjE0IDIuNDUyaDIuNjEybC42MTQtMi40NTJjLjQwNy0uMDgyLjgwNS0uMTg4IDEuMTkyLS4zMTlsMS43NTYgMS44MTYgMi4yNjMtMS4zMDYtLjY5NS0yLjQzMmMuMzA5LS4yNzIuNTk5LS41NjMuODcxLS44NzFsMi40MzIuNjk1IDEuMzA2LTIuMjYzLTEuODE1LTEuNzU2Yy4xMzEtLjM4Ny4yMzctLjc4NS4zMTgtMS4xOTJsMi40NTItLjYxNHptLTEyIDIuNjk0Yy0yLjIwOSAwLTQtMS43OTEtNC00czEuNzkxLTQgNC00IDQgMS43OTEgNCA0LTEuNzkxIDQtNCA0eiIvPjwvc3ZnPg=="/>
+    <meta property="og:title" content={article.slug || "overconfigured"}/>
+    <meta property="og:description" content={article.description || "meta"}/>
+</svelte:head>
