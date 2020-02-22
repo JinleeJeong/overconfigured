@@ -11,35 +11,36 @@
     .info {
         font: 100%/1.75 'Merriweather','Georgia',serif
     }
+
+    a {
+        color: var(--textLink) !important;
+    }
+
+    article {
+        margin-bottom: 1.6rem;
+    }
+
 </style>
 
-<ul>
 {#each articles as article}
-    <li>
-        <div class="tile">
-            <div class="tile is-parent">
-                <article class="tile is-child ">
-                    <a rel='prefetch' href='blog/{article.slug}'>
-                        <p class="title is-4 emphasize">{article.title}</p>
-                    </a>
-                <div class="info">
-                    {article.formattedDate}
-                    {article.formattedReadingTimes}
-                </div>
-                <div class="category">
-                {#if article.tags}
-                    {#each article.tags as tag}
-                        <Tag name={tag.name} color={tag.color}/>
-                    {/each}
-                {/if}
-                </div>
-                <p class="subtitle is-5">
-                    {article.description}
-                </p>
-                </article>
-            </div>
+    <article>
+        <a class="title" rel='prefetch' href='blog/{article.slug}'>
+            {article.title}
+        </a>
+        <div class="info">
+            {article.formattedDate}
+            {article.formattedReadingTimes}
         </div>
-    </li>
+        <div class="category">
+            {#if article.tags}
+                {#each article.tags as tag}
+                    <Tag name={tag.name} color={tag.color}/>
+                {/each}
+            {/if}
+            </div>
+        <p>
+            {article.description}
+        </p>
+    </article>
 {/each}
-</ul>
 

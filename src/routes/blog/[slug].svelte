@@ -35,8 +35,8 @@
 
 
 <div>
-	<p class="title is-3">{article.title}</p>
-	<p class="subtitle is-6 info">
+	<p>{article.title}</p>
+	<p class="info">
 		{article.formattedDate}
 		{article.formattedReadingTimes}
 	</p>
@@ -51,7 +51,6 @@
 </div>
 
 <article class='content'>
-
 	{@html article.htmlContent}
 </article>
 

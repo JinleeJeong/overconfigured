@@ -1,25 +1,35 @@
-<style>
-  main {
-		margin: 0 auto;
-		width: 35vw;	
-  }
+<script>
+	import ThemeSwitch from '../components/ThemeSwitch.svelte';
+</script>
 
-	h1 {
-		font-size: 2.8em;
-		font-weight: 700;
+<style>
+	.head {
+		font-size: 2.26rem;
+		font-weight: 900;
 		margin: 0 0 0.5em 0;
+		font-family: 'Montserrat','sans-serif';
+		color: var(--header);
 	}
-	
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
+
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 42rem;
+		padding: 2.625rem 1.3125rem;
 	}
 </style>
 
-<main>
-  <h1 class="emphasize">Overconfigured</h1>
-  <slot />
-</main>
+<div class="container">		
+	<h1>
+		<a class="head" href="/">
+			Overconfigured
+		</a>
+	</h1>
+	<p style="float: right;">
+		<ThemeSwitch/>
+	</p>
+	<slot/>
+</div>
+
 
 

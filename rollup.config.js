@@ -6,11 +6,18 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import marked from 'marked';
+import sveltePreprocess from 'svelte-preprocess';
 import pkg from './package.json';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+
+const preprocess = sveltePreprocess({
+	typescript: {
+		tsconfigDirectory: './',
+	}
+});
 
 const onwarn = (warning, onwarn) => (warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) || onwarn(warning);
 const markdown = () => ({
@@ -28,11 +35,13 @@ export default {
 		input: config.client.input(),
 		output: config.client.output(),
 		plugins: [
+			
 			replace({
 				'process.browser': true,
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			svelte({
+				preprocess,
 				dev,
 				hydratable: true,
 				emitCss: true
@@ -77,6 +86,7 @@ export default {
 				'process.env.NODE_ENV': JSON.stringify(mode)
 			}),
 			svelte({
+				preprocess,
 				generate: 'ssr',
 				dev
 			}),

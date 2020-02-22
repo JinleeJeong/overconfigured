@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>Overconfigured</title>
+	<title>Overconfigured A personal blog by seongju moon</title>
 </svelte:head>
 
 <div>

@@ -1,14 +1,40 @@
 html {
-	background-color: #8994CE;
-	color: #EEE;
-	font: 100%/1.75 'Merriweather','Georgia',serif
+	font: 100%/1.75 'Noto Sans KR' 'Merriweather','Georgia', serif
 }
 
-body {
-	margin: 0;
-	/* font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-	font-size: 14px;
-	line-height: 1.5;
+#sapper {
+	color: var(--textNormal);
+	background: var(--bg);
+	transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
+	overflow-y: scroll;
+	min-height: 100vh;
+}
+
+body.dark {
+	-webkit-font-smoothing: antialiased;
+    --bg: #282c35;
+    --bg-secondary: #363c48;
+    --header: #fff;
+    --textNormal: hsla(0,0%,100%,0.88);
+    --textTitle: #fff;
+    --textLink: #fac695;
+    --hr: hsla(0,0%,100%,0.2);
+    --inlineCode-bg: rgba(115,124,153,0.2);
+    --inlineCode-text: #e6e6e6;
+    --form-shadow: 0 2px 15px 0 rgba(26,26,27,0.637);
+}
+
+body.light {
+	--bg: #fff;
+    --bg-secondary: #f9fafb;
+    --header: var(--pink);
+    --textNormal: #222;
+    --textTitle: #222;
+    --textLink: #b62fd1;
+    --hr: rgba(0,0,0,0.2);
+    --inlineCode-bg: rgba(255,229,100,0.2);
+    --inlineCode-text: #1a1a1a;
+    --form-shadow: 0 2px 15px 0 rgba(210,214,220,0.5);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,15 +48,21 @@ h1 {
 }
 
 .emphasize {
-	font-family: 'Black Han Sans', menlo, inconsolata, monospace;
+	color: var(--header);
+	font-family: 'Noto Sans KR', menlo, inconsolata, monospace;
+	font-weight: 200;
 }
 
 a {
-	color: inherit;
+	font-family: 'Noto Sans KR', menlo, inconsolata, monospace;
 }
 
 @media (min-width: 400px) {
 	body {
-		font-size: 16px;
+		font-size: 1.2em;
 	}
+}
+
+.title {
+	font-size: 1.45rem;
 }

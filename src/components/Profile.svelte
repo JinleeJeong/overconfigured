@@ -5,23 +5,14 @@
 </script>
 
 <style>
-    img {
-      display: block; 
-      margin: 0px auto; 
-      border-radius: 100%;
-      width: 150px;
-      height: 150px;
-      clip: auto;
+    .avatar {
+      margin-right: 0.875rem;
+      margin-bottom: 0;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
     }
 
-    @media (min-width: 480px) {
-      img {
-        border-radius: 100%;
-        width: 88px;
-        height: 85px;
-        clip: auto;
-      } 
-    }
 
     .descriptrion {
       font-size: 13pt;
@@ -30,23 +21,25 @@
     .name {
       color: #a164d1;
     }
+    .wrapper {
+      max-width: 350px;;
+    }
+
+    aside {
+      margin-bottom: 1.3rem;
+    }
 </style>
 
-<slot>
-<div class="columns is-multiline is-mobile">
-  <div class="column is-one-quarter">
-    <img src="img/profile_seong.jpg" alt=""/>
-  </div>
-  <div class="column">
-     <h3 class="title is-4">
+<aside>
+  <div class="profile">
+    <img src="img/profile_seong.jpg" class="avatar" alt="hello"/>
+    <div class="wrapper">
       {#if mainAppear}
-        Personal blog of <span class="name">{name}</span>
+        <p>Personal blog by <span class="name">{name}</span></p>
       {:else}
-        <span class="name">{name}</span>
-      {/if}
-      </h3>
-      <h5 class="subtitle is-4 descriptrion">
-        {description}
-      </h5>
+        <p><span class="name">{name}</span> &nbsp; {description}</p>
+      {/if}      
+      <p class="descriptrion">{description}</p>        
+    </div>
   </div>
-</slot>
+</aside>
