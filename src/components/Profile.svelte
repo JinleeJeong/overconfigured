@@ -13,6 +13,9 @@
       border-radius: 50%;
     }
 
+    .profile {
+      display: flex;
+    }
 
     .descriptrion {
       font-size: 13pt;

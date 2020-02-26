@@ -3,10 +3,12 @@
 </script>
 
 <style>
+	h1 {
+		margin-bottom: 1.65rem;
+	}
 	.head {
 		font-size: 2.26rem;
 		font-weight: 900;
-		margin: 0 0 0.5em 0;
 		font-family: 'Montserrat','sans-serif';
 		color: var(--header);
 	}
@@ -16,6 +18,12 @@
 		margin-right: auto;
 		max-width: 42rem;
 		padding: 2.625rem 1.3125rem;
+	}
+
+	@media screen and (min-width: 320px) {
+		.head {
+			font-size: 1.7rem;
+		}
 	}
 </style>
 
