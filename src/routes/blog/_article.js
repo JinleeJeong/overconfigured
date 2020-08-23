@@ -81,14 +81,14 @@ const articles = fs.readdirSync(POSTS_DIR)
 			formattedReadingTimes,
 			formattedDate,
 			tags,
-			htmlContent
+			htmlContent,
+			date
 		}
 	});
 
 articles.sort((lhs, rhs) => {
-
-	if (lhs.date > rhs.date) return 1
-	if (lhs.date < rhs.date) return -1
+	if (lhs.date > rhs.date) return -1
+	if (lhs.date < rhs.date) return 1
 });
 
 articles.forEach(article => {
