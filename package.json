@@ -20,7 +20,7 @@
     "marked": "^0.8.0",
     "polka": "next",
     "postcss": "^7.0.27",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.21.0",
     "reading-time-emoji": "^1.1.0",
     "sass": "^1.25.0",
     "sirv": "^0.4.0",
