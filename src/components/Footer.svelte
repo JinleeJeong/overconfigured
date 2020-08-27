@@ -6,6 +6,9 @@
     a > i {
         margin-right: 0.5rem;
     }
+    .hidden {
+        display: none;
+    }
 </style>
 
 <slot>    
@@ -17,4 +20,8 @@
             <i class="fab fa-facebook"></i> facebook
     </a>
     </div>
+
+    <a href="/sitemap">Sitemap</a>
+    <a href="/rss">RSS </a>
+    <a href="robots.txt" class="hidden">모루게소요 킹치만 이렇게 하지 않으면 못쓰는걸요?</a>
 </slot>
