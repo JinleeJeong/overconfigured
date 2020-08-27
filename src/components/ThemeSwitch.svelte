@@ -1,5 +1,5 @@
 <style>
-    @supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type='checkbox'],
   input[type='radio'] {
     --active: #275EFE;
@@ -94,7 +94,7 @@
   }
   input[type='checkbox']:not(.switch):after {
     width: 5px;
-    height: 9px;
+    height: 8px;
     border: 2px solid var(--active-inner);
     border-top: 0;
     border-left: 0;
@@ -155,12 +155,23 @@
 </style>
 
 <script>
-  let isLightmode = false;
+  import { onMount } from 'svelte';
+  let isLightmode = false
+  const storageKey = "overconfigured-theme-right";
   const toggleSwitch = () => {
-    let body = document.querySelector('body');
     isLightmode = !isLightmode;
-    body.setAttribute('class', isLightmode? 'light': 'dark');
+    updateSwitch();
   };
+  const updateSwitch = () => {
+    const body = document.querySelector('body');
+    window.localStorage.setItem(storageKey, isLightmode);
+    body.setAttribute('class', isLightmode ? 'light': 'dark');
+  };
+
+  onMount(() => {
+    isLightmode = window.localStorage.getItem(storageKey) === 'true';
+    updateSwitch();
+  });
 </script>
 
 <slot>
